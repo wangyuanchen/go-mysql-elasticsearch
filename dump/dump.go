@@ -146,6 +146,9 @@ func (d *Dumper) Dump(w io.Writer) error {
 	args = append(args, fmt.Sprintf("--user=%s", d.User))
 	args = append(args, fmt.Sprintf("--password=%s", d.Password))
 
+        // Add the --ssl=0 parameter to disable SSL
+        args = append(args, "--ssl=0")
+
 	if !d.masterDataSkipped {
 		args = append(args, "--master-data")
 	}
